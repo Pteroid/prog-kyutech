@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to prog-kyutech's documentation!
+プログラミング同好会へようこそ！
 ========================================
 
 .. toctree::
@@ -12,7 +12,7 @@ Welcome to prog-kyutech's documentation!
 
     Slack/index
 
-Indices and tables
+索引と一覧
 ==================
 
 * :ref:`genindex`
