@@ -10,7 +10,7 @@
     :maxdepth: 2
     :caption: Contents:
 
-    Slack/index
+    slack/index
 
 索引と一覧
 ==================
