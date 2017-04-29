@@ -8,4 +8,3 @@ Slackの使い方
     :glob:
 
     *
-    test.md
