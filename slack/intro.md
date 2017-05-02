@@ -45,7 +45,7 @@ Slackにはチャンネルという場所があり，そこで話題ごとに場
 
 # 最後に
 
-Slack公式のここに全部書いてあるよ．
+Slack公式のここに全部書いてあります
 
 [Slackの使い方](https://get.slack.help/hc/ja/categories/200111606)
 
