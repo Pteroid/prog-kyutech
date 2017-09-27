@@ -1,7 +1,7 @@
-from abc import abstractmethod
+from abc import ABCMeta, abstractmethod
 
 
-class Observer:
+class Observer(metaclass=ABCMeta):
     @abstractmethod
     def update(self, model):
         pass
