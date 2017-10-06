@@ -1,22 +1,25 @@
-public class C_Missile extends Thread {
+public class C_Missile {
+    static C_Missile instance = new C_Missile();
 
-    int missileID = -100;
-
-    public C_Missile(int id) {
-        missileID = id;
-        start();
+    private C_Missile() {
     }
 
-    private void launch() {
-        M_Missile missile=new M_Missile(missileID++);
+    public static C_Missile getInstance() {
+        return instance;
+    }
+
+    int missileID = 0;
+
+
+    public void launch() {
+        func();
+    }
+
+    private void func(){
+        M_Missile missile = new M_Missile(missileID++);
         missile.addObserver(V_MissileDraw.getInstance());
         missile.addObserver(V_MissileSound.getInstance());
-        missile.runFunction();
-
-    }
-
-    public void run(){
-        launch();
+        (new Thread(missile)).start();
     }
 
 

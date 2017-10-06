@@ -2,7 +2,7 @@ import java.util.Observable;
 
 import static java.lang.Thread.sleep;
 
-public class M_Missile extends Observable {
+public class M_Missile extends Observable implements Runnable{
 
     public M_Missile(int id) {
         missileID = id;
@@ -84,7 +84,7 @@ public class M_Missile extends Observable {
             setMoveDistance(getMoveDistance() + 1);
     }
 
-    public void runFunction() {
+    public void run() {
         while (isActive()) {
             fly();
             try {
