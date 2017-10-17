@@ -21,11 +21,35 @@ public class Test {
 
 これでだけだと外部から`Test`クラスのインスタンスを利用できなくなるので、`Test`クラスのインスタンスを静的な[^*1]プロパティ`instance`に代入し、`getInstance`関数を用いてそれを返すようにする。
 
+よって、インスタンスの生成タイミングは`getInstance`関数を呼び出したときである。
+
 #### static変数・関数について補足[^*1]
 
 変数・関数が静的であるとは、それらがインスタンスオブジェクトでなくクラス自体に紐づけされている状態を示す。
 
-例えば、`Samaple`クラスの静的な変数`public static int abc;` ・ 関数`public static void func(){}`は、`Sample.abc=10;` , `Sample.func();`のようにして呼び出せる。
+以下、使用例。
+
+```java
+public class Sample {
+  public static int x = 0;
+  public static void func(){
+      System.out.println("static関数内では、staticでないクラス変数・関数は使えないよ！");
+  }
+  public static void func(String txt){
+      System.out.println(x);
+      System.out.println(txt);
+  }
+}
+```
+
+```java
+public static void main(){
+  Sample.x=10;
+  Sample.func();
+}
+```
+
+
 
 ## Observer Patternについて
 
