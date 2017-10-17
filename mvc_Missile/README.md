@@ -25,27 +25,42 @@ public class Test {
 
 #### static変数・関数について補足[^*1]
 
-変数・関数が静的であるとは、それらがインスタンスオブジェクトでなくクラス自体に紐づけされている状態を示す。
+変数・関数が静的であるとは、それらがインスタンスオブジェクトでなくクラス自体に紐づけされている状態を示す。    
+
+注意点としては、static関数内ではstaticな変数・関数しか使えない。
 
 以下、使用例。
 
 ```java
 public class Sample {
-  public static int x = 0;
-  public static void func(){
-      System.out.println("static関数内では、staticでないクラス変数・関数は使えないよ！");
+  public static int x_static = 0;
+  public int y_non_static = 0;
+  public static void func_static(){
+    System.out.println(x_static);
+    //System.out.println(y_non_static);		このような記述はできない。
   }
-  public static void func(String txt){
-      System.out.println(x);
-      System.out.println(txt);
+  public void func_non_static(){
+    System.out.println(x_static);
+    System.out.println(y_non_static);
   }
 }
 ```
 
 ```java
 public static void main(){
-  Sample.x=10;
-  Sample.func();
+  Sample a = new Sample();
+  a.y_non_static = 20;
+  
+  Sample b = new Sample();
+  b.y_non_static = 300;
+  
+  Sample.x_static = 1;
+  
+  Sample.func_static();
+  //a.func_static();		このような記述はできない。
+  //Sample.func_non_static();		このような記述はできない。
+  a.func_non_static();
+  b.func_non_static();
 }
 ```
 
