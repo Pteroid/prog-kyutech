@@ -74,7 +74,7 @@ public static void main(){
 
 これもデザインパターンと呼ばれる手法の一つである。
 
-### Observer Patternの実装構造について抽象的説明
+### Observer Patternの抽象的説明
 
 `Observable`クラスは、自分の好きなタイミングで(基本的にはプロパティの状態が変更されたとき)`Observer`クラスの持つ`UpdateXXX`関数を実行する(たいていは引数にプロパティの値を渡す)。この行動は一般的に ”`Observable`が`Observer`に通知する” というように表現される。
 
