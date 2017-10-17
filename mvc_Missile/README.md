@@ -25,7 +25,7 @@ public class Test {
 
 変数・関数が静的であるとは、それらがインスタンスオブジェクトでなくクラス自体に紐づけされている状態を示す。
 
-例えば、`Samaple`クラスの静的な変数`public int abc`・関数`public void func(){}`は`Sample.abc=10;`,`Sample.func();`のようにして呼び出せる。
+例えば、`Samaple`クラスの静的な変数`public static int abc;` ・ 関数`public static void func(){}`は、`Sample.abc=10;` , `Sample.func();`のようにして呼び出せる。
 
 ## Observer Patternについて
 
