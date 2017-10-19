@@ -4,7 +4,7 @@ import static java.lang.Thread.sleep;
 
 public class M_Missile extends Observable implements Runnable{
 
-    public M_Missile(int id) {
+    public M_Missile(MissileID id) {
         missileID = id;
         generate();
     }
@@ -15,7 +15,7 @@ public class M_Missile extends Observable implements Runnable{
     boolean activation = false;
     boolean existence = true;
     int moveDistance = 0;
-    int missileID;
+    MissileID missileID;
 
     //以下、アクセサ
     private void setActive(boolean bl) {
@@ -59,8 +59,8 @@ public class M_Missile extends Observable implements Runnable{
         return moveDistance;
     }
 
-    public int getMissileID() {
-        return missileID;
+    public String getMissileName() {
+        return missileID.toString();
     }
 
     private void setLost() {

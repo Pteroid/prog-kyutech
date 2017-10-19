@@ -30,11 +30,11 @@ public class V_MissileDraw implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         if (((M_Missile) o).isActive())
-            System.out.println("ミサイル" + ((M_Missile) o).getMissileID() + " 進行中　： " + ((M_Missile) o).getMoveDistance());
+            System.out.println("ミサイル" + ((M_Missile) o).getMissileName() + " 進行中　： " + ((M_Missile) o).getMoveDistance());
         else if (((M_Missile) o).isExist())
-            System.out.println("ミサイル" + ((M_Missile) o).getMissileID() + "は壊れた");
+            System.out.println("ミサイル" + ((M_Missile) o).getMissileName() + "は壊れた");
         else {
-            System.out.println("ミサイル" + ((M_Missile) o).getMissileID() + "は消滅した");
+            System.out.println("ミサイル" + ((M_Missile) o).getMissileName() + "は消滅した");
             deleteDataSource((M_Missile) o);
         }
     }

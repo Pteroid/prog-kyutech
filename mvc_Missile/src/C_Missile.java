@@ -8,11 +8,9 @@ public class C_Missile {
         return instance;
     }
 
-    //名前識別用のID。これは本来コントローラーでなく名前管理用のモデルに書くべきだが、面倒なので省略。
-    int missileID = 0;
 
-    public void launch() {
-        M_Missile missile = new M_Missile(missileID++);
+    public void launch(MissileID id) {
+        M_Missile missile = new M_Missile(id);
         V_MissileDraw.getInstance().addDataSource(missile);
         V_MissileSound.getInstance().addDataSource(missile);
         (new Thread(missile)).start();

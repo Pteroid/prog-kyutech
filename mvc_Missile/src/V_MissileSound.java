@@ -30,9 +30,9 @@ public class V_MissileSound implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         if (((M_Missile) o).isActive())
-            System.out.println("ミサイル" + ((M_Missile) o).getMissileID() + " が近づく音がする");
+            System.out.println("ミサイル" + ((M_Missile) o).getMissileName() + " が近づく音がする");
         else if (((M_Missile) o).isExist()) {
-            System.out.println("ミサイル" + ((M_Missile) o).getMissileID() + "の爆発音が鳴り響く");
+            System.out.println("ミサイル" + ((M_Missile) o).getMissileName() + "の爆発音が鳴り響く");
             deleteDataSource((M_Missile) o);
         }
     }
